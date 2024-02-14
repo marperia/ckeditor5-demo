@@ -12,13 +12,22 @@
     "vite": "^5.0.12"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-basic-styles": "^41.1.0",
+    "@ckeditor/ckeditor5-block-quote": "^41.1.0",
     "@ckeditor/ckeditor5-editor-classic": "^41.0.0",
     "@ckeditor/ckeditor5-essentials": "^41.0.0",
     "@ckeditor/ckeditor5-inspector": "^4.1.0",
+    "@ckeditor/ckeditor5-link": "^41.1.0",
     "@ckeditor/ckeditor5-paragraph": "^41.0.0",
+    "@ckeditor/ckeditor5-remove-format": "^41.1.0",
+    "@ckeditor/ckeditor5-source-editing": "^41.1.0",
     "@ckeditor/ckeditor5-table": "^41.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^41.0.0",
+    "@ckeditor/ckeditor5-typing": "^41.1.0",
     "@ckeditor/vite-plugin-ckeditor5": "^0.1.3",
+    "@linhx/ckeditor5-emoji": "^0.0.9",
+    "@phudak/ckeditor5-emoji": "github:marperia/ckeditor5-emoji#1d319540fa22492e1b1920acbcaa2d0e3412f649",
+    "@wwalc/ckeditor5-emoji": "^11.0.2",
     "ckeditor5": "^41.0.0"
   }
 }
