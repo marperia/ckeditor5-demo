@@ -12,11 +12,6 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import Enter from '@ckeditor/ckeditor5-enter/src/enter';
 import ShiftEnter from '@ckeditor/ckeditor5-enter/src/shiftenter';
 
-// import {
-//     Emoji, EmojiActivity, EmojiFlags, EmojiFood, EmojiNature, EmojiObjects, 
-//     EmojiPeople, EmojiPlaces, EmojiSymbols
-// } from '@phudak/ckeditor5-emoji/src';
-
 import Emoji from '@wwalc/ckeditor5-emoji/src/emoji';
 
 // Get the HTML element with the ID of 'app'.

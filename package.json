@@ -25,8 +25,6 @@
     "@ckeditor/ckeditor5-theme-lark": "^41.0.0",
     "@ckeditor/ckeditor5-typing": "^41.1.0",
     "@ckeditor/vite-plugin-ckeditor5": "^0.1.3",
-    "@linhx/ckeditor5-emoji": "^0.0.9",
-    "@phudak/ckeditor5-emoji": "github:marperia/ckeditor5-emoji#1d319540fa22492e1b1920acbcaa2d0e3412f649",
     "@wwalc/ckeditor5-emoji": "^11.0.2",
     "ckeditor5": "^41.0.0"
   }
