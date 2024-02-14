@@ -9,5 +9,10 @@ export default defineConfig( {
     ckeditor5( {
       theme: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
     })
-  ]
+  ],
+  esbuild: {
+    supported: {
+      'top-level-await': true //browsers can handle top-level-await features
+    },
+  }
 } );

@@ -31,7 +31,7 @@ function DisallowNestingBlockQuotes( editor ) {
 }
 
 // Instantiate the editor using the `create` method.
-const editor = ClassicEditor.create( element, {
+const editor = await ClassicEditor.create( element, {
     plugins: [
         TextTransformation,
         Paragraph,
