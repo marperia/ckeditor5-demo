@@ -3,7 +3,7 @@ import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { SourceEditing } from '@ckeditor/ckeditor5-source-editing';
-import { Bold, Italic, Underline, Strikethrough, Code, Subscript, } from '@ckeditor/ckeditor5-basic-styles';
+import { Bold, Italic, Underline, Strikethrough, Code } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
@@ -41,7 +41,6 @@ const editor = await ClassicEditor.create( element, {
         Bold,
         Code,
         Italic,
-        Subscript,
         Underline,
         Strikethrough,
         Emoji,
@@ -60,7 +59,6 @@ const editor = await ClassicEditor.create( element, {
             'bold',
             'code',
             'italic',
-            'subscript',
             'underline',
             '|',
             'blockquote',
@@ -131,11 +129,11 @@ const editor = await ClassicEditor.create( element, {
     console.error( error );
 } );
 
-editor.keystrokes.set('Shift+Enter', 'enter');
+// editor.keystrokes.set('Shift+Enter', 'enter');
 editor.editing.view.document.on( 'enter', ( evt, data ) => {
     if ( data.isSoft ) {
-        editor.execute( 'shiftEnter' );
-        // editor.execute( 'enter' );
+        // editor.execute( 'shiftEnter' );
+        editor.execute( 'enter' );
     } else {
         editor.execute( 'shiftEnter' );
     }
@@ -148,16 +146,10 @@ editor.editing.view.document.on( 'enter', ( evt, data ) => {
 function escapeHTML(str){
     return new Option(str).innerHTML;
 }
+
 document.querySelector("#count").innerHTML = 0;
 editor.model.document.on( 'change', (event) => {
-    const d = editor.getData();
-    const n = d.replace("<p>", "").replace("</p>", "");
-    // editor.setData(n);
+    const n = editor.getData().replaceAll("<br>", "\n").replaceAll("<p>", "").replaceAll("</p>", "\n");
     document.querySelector("#result").innerHTML = escapeHTML(n);
     document.querySelector("#count").innerHTML = new Blob([n]).size;
-} );
-
-document.querySelector( '#submit' ).addEventListener( 'click', () => {
-    const editorData = editor.getData();
-    document.querySelector("#result").innerHTML = editorData;
 } );
